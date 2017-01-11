@@ -1,7 +1,6 @@
 'use strict'
 
 var chalk = require('chalk')
-var migrationGuideUrlFor = require('./migration-guide-url-for')
 var parentFolderNameFor = require('./parent-folder-name-for')
 
 var warningCount = 0
@@ -11,13 +10,11 @@ module.exports = function (fileData, warning, rule) {
   var library = parentFolderNameFor(rule.file)
 
   console.log()
-  console.log(chalk.yellow(
-    warningCount + '. ' + warning.fix
-  ))
-  console.log(chalk.blue('  Line ' + fileData.lineNum + ': ' + fileData.file))
-  console.log(chalk.cyan.dim('  Reason: ' + warning.reason))
-  console.log(chalk.cyan.dim(
-    '  More info: ' +
-    chalk.underline(migrationGuideUrlFor(library) + '#' + warning.docsHash)
-  ))
+  console.log(chalk.yellow(warningCount + '. ' + warning.reason))
+  console.log(chalk.blue('  第 ' + fileData.lineNum + ' 行：' + fileData.file))
+  console.log(chalk.cyan.dim('  ' + warning.tips))
+  if (warning.notice) {
+    console.log(chalk.red('  注意：' + warning.notice));
+  }
+  console.log(chalk.green('  示例：' + chalk.underline(warning.demo)))
 }
