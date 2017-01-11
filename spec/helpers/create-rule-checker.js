@@ -2,7 +2,7 @@
 
 global.createRuleChecker = ruleName => {
   const stripAnsi = require('strip-ansi')
-  const assertRule = require('../../helpers/assert-rule')
+  const assertRule = require('../../lib/assert-rule')
 
   const rule = require('../../rules/' + ruleName)
   return function (line) {

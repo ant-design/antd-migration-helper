@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 'use strict'
 
-require('./helpers/check-if-outdated')(function () {
+require('./lib/check-if-outdated')(function () {
   var fs = require('graceful-fs')
   var glob = require('glob')
   var split = require('split')
 
-  var checkForDeprecations = require('./helpers/check-for-deprecations')
-  var printSummary = require('./helpers/print-summary')
+  var checkForDeprecations = require('./lib/check-for-deprecations')
+  var printSummary = require('./lib/print-summary')
 
   var args = process.argv.slice(2)
   var filesAndOrFolders = args.length
