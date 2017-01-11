@@ -1,7 +1,11 @@
 'use strict';
 
 module.exports = {
-  pattern: /toggleOpen=/,
+  traverser: {
+    JSXAttribute: function(path) {
+      return path.node.name.name === 'toggleOpen';
+    },
+  },
   warning: function() {
     return {
       type: 'js',

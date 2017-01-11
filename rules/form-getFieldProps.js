@@ -1,7 +1,14 @@
 'use strict';
 
 module.exports = {
-  pattern: /getFieldProps\(/,
+  traverser: {
+    CallExpression: function(path) {
+      const callee = path.node.callee;
+      if (callee.type === 'Identifier') {
+        return callee.name === 'getFieldProps';
+      }
+    },
+  },
   warning: function() {
     return {
       type: 'js',
