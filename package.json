@@ -1,0 +1,45 @@
+{
+  "name": "antd-migration-helper",
+  "version": "0.0.0",
+  "description": "CLI tool to aid in migrate antd from old version to newer version.",
+  "main": "index.js",
+  "bin": {
+    "antd-migration-helper": "index.js"
+  },
+  "scripts": {
+    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ant-design/antd-migration-helper.git"
+  },
+  "keywords": [
+    "antd",
+    "upgrade",
+    "migration",
+    "helper"
+  ],
+  "author": "Benjy Cui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ant-design/antd-migration-helper/issues"
+  },
+  "homepage": "https://github.com/ant-design/antd-migration-helper#readme",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "glob": "^7.1.1",
+    "graceful-fs": "^4.1.11",
+    "recursive-readdir-sync": "^1.0.6",
+    "request": "^2.79.0",
+    "semver": "^5.3.0",
+    "split": "^1.0.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.5.2",
+    "rewire": "^2.5.2",
+    "strip-ansi": "^3.0.1"
+  }
+}
