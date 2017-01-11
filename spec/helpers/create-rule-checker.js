@@ -12,7 +12,7 @@ global.createRuleChecker = ruleName => {
       file: 'file.js'
     }, rule)
     if (warning) {
-      warning.fix = stripAnsi(warning.fix)
+      warning.tips = stripAnsi(warning.tips)
     }
     return warning
   }

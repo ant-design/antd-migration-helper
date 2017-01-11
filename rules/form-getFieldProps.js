@@ -1,10 +1,8 @@
 'use strict';
 
-var chalk = require('chalk');
-
 module.exports = {
   pattern: /getFieldProps\(/,
-  warning: function(match, array) {
+  warning: function() {
     return {
       type: 'js',
       reason: '`getFieldProps` 在 `antd@2.0` 中已经废弃，请使用 `getFieldDecorator`',

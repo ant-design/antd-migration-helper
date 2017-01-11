@@ -13,8 +13,8 @@ module.exports = function (fileData, warning, rule) {
   console.log(chalk.yellow(warningCount + '. ' + warning.reason))
   console.log(chalk.blue('  第 ' + fileData.lineNum + ' 行：' + fileData.file))
   console.log(chalk.cyan.dim('  ' + warning.tips))
+  console.log(chalk.cyan.dim('  示例：' + chalk.underline(warning.demo)))
   if (warning.notice) {
     console.log(chalk.red('  注意：' + warning.notice));
   }
-  console.log(chalk.green('  示例：' + chalk.underline(warning.demo)))
 }
