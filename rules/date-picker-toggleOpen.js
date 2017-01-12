@@ -1,15 +1,9 @@
 'use strict';
 
+const deprecateProps = require('./common/deprecateProps');
+
 module.exports = {
-  traverser: {
-    JSXAttribute: function(path) {
-      const isToggleOpen = path.node.name.name === 'toggleOpen';
-      if (isToggleOpen) {
-        const isInDatePicker = path.parent.name.name === 'DatePicker';
-        return isInDatePicker;
-      }
-    },
-  },
+  traverser: deprecateProps('DatePicker', ['toggleOpen']),
   warning: function() {
     return {
       reason: '`DatePicker[toggleOpen]` 在 `antd@2.0` 中已经废弃，请使用 `DatePicker[onOpenChange]`',
