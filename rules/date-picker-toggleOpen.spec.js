@@ -2,11 +2,8 @@
 
 const check = createRuleChecker('date-picker-toggleOpen');
 
-describe('Rule: form-getFieldProps', () => {
+describe('Rule: date-picker-toggleOpen', () => {
   it('matches property `toggleOpen` of `DatePicker`', () => {
-    const warning = check(`
-      <DatePicker toggleOpen={this.handleToggleOpen} />
-    `)
-    expect(warning).toBeTruthy();
+    expect(check('<DatePicker toggleOpen={this.handleToggleOpen} />')).toThrow();
   })
 });
