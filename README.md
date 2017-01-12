@@ -6,3 +6,24 @@
 [![Dependency Status](https://david-dm.org/ant-design/antd-migration-helper.svg?style=flat-square)](https://david-dm.org/ant-design/antd-migration-helper)
 
 CLI tool to aid in migrate antd from old version to newer version.
+
+## Usage
+
+```bash
+# install
+npm install -g antd-migration-helper
+
+# navigate to an antd@1.x project directory
+cd path/to/my-antd-project
+
+# scan all files in the current directory
+antd-migration-helper
+# scan all files in specific sub-directories
+antd-migration-helper src folder-a folder-b
+# scan a specific file or files
+antd-migration-helper src/app.jsx
+```
+
+## License
+
+MIT

@@ -4,6 +4,7 @@
 
 require('./lib/check-if-outdated')(function () {
   var fs = require('graceful-fs')
+  var path = require('path')
   var glob = require('glob')
   var chalk =require('chalk')
   var traverse = require('babel-traverse').default
@@ -20,17 +21,19 @@ require('./lib/check-if-outdated')(function () {
   glob(filesAndOrFolders, { nodir: true }, function (error, files) {
     if (error) throw error
 
-    var fileChecks = files.map(function (file) {
-      return new Promise(function (resolve) {
-        fs.readFile(file, (err, fileDesc) => {
-          if (err) throw err;
+    var fileChecks = files
+          .filter(file => ['.jsx', '.js'].indexOf(path.extname(file)) > -1)
+          .map(function (file) {
+            return new Promise(function (resolve) {
+              fs.readFile(file, (err, fileDesc) => {
+                if (err) throw err;
 
-          var ast = parser(fileDesc.toString());
-          traverse(ast, getTraverser(file));
-          resolve();
-        })
-      })
-    })
+                var ast = parser(fileDesc.toString());
+                traverse(ast, getTraverser(file));
+                resolve();
+              })
+            })
+          })
     Promise.all(fileChecks)
       .then(() => {
         console.log();
