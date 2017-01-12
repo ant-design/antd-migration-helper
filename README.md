@@ -1,2 +1,8 @@
 # antd-migration-helper
-CLI tool to aid in migrate antd from old version to newer version. 
+
+[![](https://img.shields.io/travis/ant-design/antd-migration-helper.svg?style=flat-square)](https://travis-ci.org/ant-design/antd-migration-helper)
+[![npm package](https://img.shields.io/npm/v/antd-migration-helper.svg?style=flat-square)](https://www.npmjs.org/package/antd-migration-helper)
+[![NPM downloads](http://img.shields.io/npm/dm/antd-migration-helper.svg?style=flat-square)](https://npmjs.org/package/antd-migration-helper)
+[![Dependency Status](https://david-dm.org/ant-design/antd-migration-helper.svg?style=flat-square)](https://david-dm.org/ant-design/antd-migration-helper)
+
+CLI tool to aid in migrate antd from old version to newer version.

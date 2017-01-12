@@ -5,6 +5,7 @@
 require('./lib/check-if-outdated')(function () {
   var fs = require('graceful-fs')
   var glob = require('glob')
+  var chalk =require('chalk')
   var traverse = require('babel-traverse').default
   var parser = require('./lib/parser')
   var getTraverser = require('./lib/getTraverser')
@@ -31,6 +32,13 @@ require('./lib/check-if-outdated')(function () {
       })
     })
     Promise.all(fileChecks)
+      .then(() => {
+        console.log();
+        console.log(
+          '完整不兼容改动列表及升级指南：' +
+            chalk.underline('https://ant.design/changelog-cn#2.x-不兼容改动')
+        );
+      })
       .catch(function (error) {
         throw error
       })
