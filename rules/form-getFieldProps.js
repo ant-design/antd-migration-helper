@@ -11,7 +11,6 @@ module.exports = {
   },
   warning: function() {
     return {
-      type: 'js',
       reason: '`getFieldProps` 在 `antd@2.0` 中已经废弃，请使用 `getFieldDecorator`',
       tips: '可以使用 [antd-codemod](https://github.com/ant-design/antd-codemod) 中的脚本 `getFieldProps-to-getFieldDecorator`' +
         '自动重构 `getFieldProps` 为 `getFieldDecorator`。',
