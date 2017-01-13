@@ -42,8 +42,14 @@ require('./lib/check-if-outdated')(function () {
             chalk.underline('https://github.com/ant-design/antd-migration-helper/issues')
         ));
         console.log();
+        console.log(chalk.green('Tips：'));
+        console.log(chalk.green('1. 在升级 antd 的过程中，建议每做完一次合理的修改并 review & 测试之后，就 commit 一次，这样在误操作时能随时回滚到之前的版本'));
         console.log(chalk.green(
-          '完整不兼容改动列表及升级指南：' +
+          '2. 由于 antd-codemod 在修改代码的过程中，可能会破坏已有的代码风格，所以可以在升级完成之后，使用 `eslint --fix` 功能统一代码风格，详见：' +
+            chalk.underline('http://eslint.org/')
+        ));
+        console.log(chalk.green(
+          '3. 完整不兼容改动列表及升级指南：' +
             chalk.underline('https://ant.design/changelog-cn#2.x-不兼容改动')
         ));
       })

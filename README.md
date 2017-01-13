@@ -24,7 +24,10 @@
 ...
 以上为 antd-migration-helper 在 ./src/ 内找到的已经废弃的用法。对于误报或者有无法扫描出来的情况，本地可以先忽略，然后到 GitHub 上提 issue：https://github.com/ant-design/antd-migration-helper/issues
 
-完整不兼容改动列表及升级指南：https://ant.design/changelog-cn#2.x-不兼容改动
+Tips：
+1. 在升级 antd 的过程中，建议每做完一次合理的修改并 review & 测试之后，就 commit 一次，这样在误操作时能随时回滚到之前的版本
+2. 由于 antd-codemod 在修改代码的过程中，可能会破坏已有的代码风格，所以可以在升级完成之后，使用 `eslint --fix` 功能统一代码风格，详见：http://eslint.org/
+3. 完整不兼容改动列表及升级指南：https://ant.design/changelog-cn#2.x-不兼容改动
 ```
 
 ## Usage
