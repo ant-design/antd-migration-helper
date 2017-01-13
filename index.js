@@ -36,11 +36,16 @@ require('./lib/check-if-outdated')(function () {
           })
     Promise.all(fileChecks)
       .then(() => {
+        console.log(chalk.yellow(
+          '以上为 antd-migration-helper 在 ' + args.join(',') + ' 内找到的已经废弃的用法。' +
+            '对于误报或者有无法扫描出来的情况，本地可以先忽略，然后到 GitHub 上提 issue：' +
+            chalk.underline('https://github.com/ant-design/antd-migration-helper/issues')
+        ));
         console.log();
-        console.log(
+        console.log(chalk.green(
           '完整不兼容改动列表及升级指南：' +
             chalk.underline('https://ant.design/changelog-cn#2.x-不兼容改动')
-        );
+        ));
       })
       .catch(function (error) {
         throw error
