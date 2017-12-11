@@ -1,6 +1,6 @@
 'use strict';
 
-const deprecateProps = require('./common/deprecateProps');
+const deprecateProps = require('../lib/deprecate-props');
 
 module.exports = {
   traverser: deprecateProps('Table', [
@@ -10,8 +10,8 @@ module.exports = {
   ]),
   warning: function() {
     return {
-      reason: '`Table[columnsPageRange|columnsPageSize|currentColumnsPage]` ' +
-        '在 `and@2.0` 中已经移除，请使用 Table 固定列功能',
+      reason: '`Table[columnsPageRange|columnsPageSize|currentColumnsPage]` has been removed',
+      fix: 'Use Table\'s fixed column instead',
       demo: 'http://u.ant.design/fixed-columns',
     };
   },

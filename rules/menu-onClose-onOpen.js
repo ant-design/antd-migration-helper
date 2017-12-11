@@ -1,12 +1,13 @@
 'use strict';
 
-const deprecateProps = require('./common/deprecateProps');
+const deprecateProps = require('../lib/deprecate-props');
 
 module.exports = {
   traverser: deprecateProps('Menu', ['onClose', 'onOpen']),
   warning: function() {
     return {
-      reason: '`Menu[onOpen|onClose]` 在 `antd@2.0` 中已经移除，请使用 `Menu[onOpenChange]`',
+      reason: '`Menu[onOpen]` and `Menu[onClose]` have been removed',
+      fix: 'Use `Menu[onOpenChange] instead`',
       demo: 'http://u.ant.design/menu-on-open-change',
     };
   },

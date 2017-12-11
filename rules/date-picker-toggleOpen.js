@@ -1,13 +1,13 @@
 'use strict';
 
-const deprecateProps = require('./common/deprecateProps');
+const deprecateProps = require('../lib/deprecate-props');
 
 module.exports = {
   traverser: deprecateProps('DatePicker', ['toggleOpen']),
   warning: function() {
     return {
-      reason: '`DatePicker[toggleOpen]` 在 `antd@2.0` 中已经废弃，请使用 `DatePicker[onOpenChange]`',
-      tips: '`toggleOpen({ open }): void` 替换为 `onOpenChange(open): void`，新的写法请参考下面的 demo',
+      reason: '`DatePicker[toggleOpen]` has removed',
+      fix: 'Replace `DatePicker[toggleOpen]` with `DatePicker[onOpenChange]`',
       demo: 'http://u.ant.design/date-picker-on-open-change'
     }
   }
