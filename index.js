@@ -39,17 +39,17 @@ require('./lib/check-if-outdated')(function () {
     var fileChecks = files
       .filter(file => ['.jsx', '.js'].indexOf(path.extname(file)) > -1)
       .map(function (file) {
-      return new Promise(function (resolve, reject) {
-        fs.readFile(file, (err, fileDesc) => {
-          if (err) throw err;
-          checkForDeprecations({
-            file: file,
-            content: fileDesc.toString()
-          }, result);
-          resolve();
+        return new Promise(function (resolve, reject) {
+          fs.readFile(file, (err, fileDesc) => {
+            if (err) throw err;
+            checkForDeprecations({
+              file: file,
+              content: fileDesc.toString()
+            }, result);
+            resolve();
+          })
         })
       })
-    })
     Promise.all(fileChecks)
       .then(function () {
         printSummary(result.deprecationsFound)
