@@ -1,6 +1,6 @@
 {
   "name": "antd-migration-helper",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "CLI tool to aid in migrate antd from old version to newer version.",
   "main": "index.js",
   "bin": {
