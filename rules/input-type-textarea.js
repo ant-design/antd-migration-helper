@@ -8,7 +8,9 @@ module.exports = {
       }
       for (var i = 0; i < path.node.attributes.length; ++i) {
         const attribute = path.node.attributes[i];
-        if (attribute.name.name === 'type' && attribute.value.value === 'textarea') {
+        if (attribute.type === 'JSXAttribute' &&
+          attribute.name.name === 'type' &&
+          attribute.value.value === 'textarea') {
           return true;
         }
       }
