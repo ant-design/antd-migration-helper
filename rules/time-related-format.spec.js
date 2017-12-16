@@ -14,6 +14,6 @@ describe('Rule: time-related-format', () => {
   });
 
   it('matches invalid `format` of time-related components', () => {
-    expect(check('<DatePicker format="yyyy-MM-dd" />')).toThrow();
+    expect(check('<DatePicker format="yyyy-MM-dd" />')).toThrowError(/deprecated/);
   });
 });

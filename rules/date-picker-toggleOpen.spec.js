@@ -8,6 +8,6 @@ describe('Rule: date-picker-toggleOpen', () => {
       .not.toThrow();
   });
   it('matches property `toggleOpen` of `DatePicker`', () => {
-    expect(check('<DatePicker toggleOpen={this.handler} />')).toThrow();
+    expect(check('<DatePicker toggleOpen={this.handler} />')).toThrowError(/deprecated/);
   });
 });

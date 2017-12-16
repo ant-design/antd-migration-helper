@@ -8,7 +8,7 @@ describe('Rule: table-columnsPaging', () => {
       .not.toThrow();
   });
   it('matches property `columnsPageRange` of `Table`', () => {
-    expect(check('<Table columnsPageRange={columnsPageRange} />')).toThrow();
+    expect(check('<Table columnsPageRange={columnsPageRange} />')).toThrowError(/deprecated/);
   });
 
   it('doesn\'t match `columnsPageSize` which not in `Table`', () => {
@@ -16,7 +16,7 @@ describe('Rule: table-columnsPaging', () => {
       .not.toThrow();
   });
   it('matches property `columnsPageSize` of `Table`', () => {
-    expect(check('<Table columnsPageSize={columnsPageSize} />')).toThrow();
+    expect(check('<Table columnsPageSize={columnsPageSize} />')).toThrowError(/deprecated/);
   });
 
   it('doesn\'t match `currentColumnsPage` which not in `Table`', () => {
@@ -24,6 +24,6 @@ describe('Rule: table-columnsPaging', () => {
       .not.toThrow();
   });
   it('matches property `currentColumnsPage` of `Table`', () => {
-    expect(check('<Table currentColumnsPage={currentColumnsPage} />')).toThrow();
+    expect(check('<Table currentColumnsPage={currentColumnsPage} />')).toThrowError(/deprecated/);
   });
 });

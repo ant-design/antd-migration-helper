@@ -4,6 +4,6 @@ const check = createRuleChecker('form-getFieldProps');
 
 describe('Rule: form-getFieldProps', () => {
   it('matches call expression of `getFieldProps`', () => {
-    expect(check('<input {...getFieldProps("name")} />')).toThrow();
+    expect(check('<input {...getFieldProps("name")} />')).toThrowError(/deprecated/);
   })
 });

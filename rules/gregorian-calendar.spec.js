@@ -7,9 +7,9 @@ describe('Rule: gregorian-calendar', () => {
     expect(check('setTime(0)')).not.toThrow();
   });
   it('matches `obj.setTime`', () => {
-    expect(check('sth.date.setTime(0)')).toThrow();
+    expect(check('sth.date.setTime(0)')).toThrowError(/deprecated/);
   });
   it('matches `obj[setTime]`', () => {
-    expect(check('sth.date[setTime](0)')).toThrow();
+    expect(check('sth.date[setTime](0)')).toThrowError(/deprecated/);
   });
 });

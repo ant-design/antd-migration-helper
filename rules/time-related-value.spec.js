@@ -8,7 +8,7 @@ describe('Rule: time-related-value', () => {
       .not.toThrow();
   });
   it('matches `value: string` of time-related component', () => {
-    expect(check('<DatePicker value="2017-01-12" />')).toThrow();
+    expect(check('<DatePicker value="2017-01-12" />')).toThrowError(/deprecated/);
   });
 
   it('doesn\'t match `defaultValue: string` which not in time-related components', () => {
@@ -16,6 +16,6 @@ describe('Rule: time-related-value', () => {
       .not.toThrow();
   });
   it('matches `defaultValue: string` of time-related component', () => {
-    expect(check('<DatePicker defaultValue="2017-01-12" />')).toThrow();
+    expect(check('<DatePicker defaultValue="2017-01-12" />')).toThrowError(/deprecated/);
   });
 });

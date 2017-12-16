@@ -20,6 +20,6 @@ describe('Rule: form-getFieldDecorator-exclusive', () => {
           <Input />
         )}
       </FormItem>
-    `)).toThrow();
+    `)).toThrowError(/deprecated/);
   })
 });

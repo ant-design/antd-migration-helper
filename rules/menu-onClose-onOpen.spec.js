@@ -7,13 +7,13 @@ describe('Rule: menu-onClose-onOpen', () => {
     expect(check('<UserComponent onClose={onClose} />')).not.toThrow();
   });
   it('matches property `onClose` of `Menu`', () => {
-    expect(check('<Menu onClose={onClose} />')).toThrow();
+    expect(check('<Menu onClose={onClose} />')).toThrowError(/deprecated/);
   });
 
   it('doesn\'t match `onOpen` which not in `Menu`', () => {
     expect(check('<UserComponent onOpen={onOpen} />')).not.toThrow();
   });
   it('matches property `onOpen` of `Menu`', () => {
-    expect(check('<Menu onOpen={onOpen} />')).toThrow();
+    expect(check('<Menu onOpen={onOpen} />')).toThrowError(/deprecated/);
   });
 });

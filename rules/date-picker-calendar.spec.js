@@ -6,6 +6,6 @@ describe('Rule: date-picker-calendar', () => {
   it('matches `DatePicker.Calendar`', () => {
     expect(check(`
       <DatePicker.Calendar />
-    `)).toThrow();
+    `)).toThrowError(/deprecated/);
   })
 });

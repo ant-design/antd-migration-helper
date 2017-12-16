@@ -7,6 +7,6 @@ describe('Rule: popver-overlay', () => {
     expect(check('<UserComponent overlay={overlay} />')).not.toThrow();
   });
   it('matches property `overlay` of `Popover`', () => {
-    expect(check('<Popover overlay={overlay} />')).toThrow();
+    expect(check('<Popover overlay={overlay} />')).toThrowError(/deprecated/);
   });
 });
