@@ -7,6 +7,7 @@ require('./lib/check-if-outdated')(function () {
   var path = require('path')
   var glob = require('glob')
   var split = require('split')
+  var debug = require('debug')('antd-migration-helper')
 
   var checkForDeprecations = require('./lib/check-for-deprecations')
   var printSummary = require('./lib/print-summary')
@@ -42,6 +43,7 @@ require('./lib/check-if-outdated')(function () {
         return new Promise(function (resolve, reject) {
           fs.readFile(file, (err, fileDesc) => {
             if (err) throw err;
+            debug('Scanning file: %s', file);
             checkForDeprecations({
               file: file,
               content: fileDesc.toString()
