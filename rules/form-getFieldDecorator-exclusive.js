@@ -12,7 +12,7 @@ module.exports = {
       }
       for (var i = 0; i < config.properties.length; ++i) {
         const property = config.properties[i];
-        if (property.key.name === 'exclusive') {
+        if (property.key && property.key.name === 'exclusive') {
           return true;
         }
       }
