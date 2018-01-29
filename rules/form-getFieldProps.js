@@ -12,7 +12,7 @@ module.exports = {
   warning: function() {
     return {
       reason: '`getFieldProps` has been deprecated',
-      fixed: 'Use `getFieldDecorator` instead of `getFieldProps`',
+      fix: 'Use `getFieldDecorator` instead of `getFieldProps`',
       demo: 'http://u.ant.design/get-field-decorator',
     }
   }
