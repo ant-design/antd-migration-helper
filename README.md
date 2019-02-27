@@ -3,7 +3,7 @@
 [![](https://img.shields.io/travis/ant-design/antd-migration-helper.svg?style=flat-square)](https://travis-ci.org/ant-design/antd-migration-helper)
 [![npm package](https://img.shields.io/npm/v/antd-migration-helper.svg?style=flat-square)](https://www.npmjs.org/package/antd-migration-helper)
 [![NPM downloads](http://img.shields.io/npm/dm/antd-migration-helper.svg?style=flat-square)](https://npmjs.org/package/antd-migration-helper)
-[![Dependency Status](https://david-dm.org/ant-design/antd-migration-helper.svg?style=flat-square)](https://david-dm.org/ant-design/antd-migration-helper)
+[![Dependency Status](https://david-dm.org/ant-design/antd-migration-helper.svg?style=flat-square)](https://david-dm.org/ant-design/antd-migration-helper) [![Greenkeeper badge](https://badges.greenkeeper.io/ant-design/antd-migration-helper.svg)](https://greenkeeper.io/)
 
 > CLI tool to aid in migrate antd from old version to newer version. It scans files for JSX code and provides detailed warnings when deprecated patterns are found. It cannot reliably catch every deprecation, but should get you 80% of the way there.
 
