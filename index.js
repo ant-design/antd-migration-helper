@@ -44,10 +44,14 @@ require('./lib/check-if-outdated')(function () {
           fs.readFile(file, (err, fileDesc) => {
             if (err) throw err;
             debug('Scanning file: %s', file);
-            checkForDeprecations({
-              file: file,
-              content: fileDesc.toString()
-            }, result);
+            try { 
+              checkForDeprecations({
+                file: file,
+                content: fileDesc.toString()
+              }, result);
+            } catch (e) {
+              debug('check encounter errors %s %s', file, e);
+            }
             resolve();
           })
         })
