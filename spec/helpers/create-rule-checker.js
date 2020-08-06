@@ -1,6 +1,6 @@
 'use strict'
 
-const traverse = require('babel-traverse').default;
+const traverse = require('@babel/traverse').default;
 const parser = require('../../lib/parser');
 
 function generateTestTraverser(rule) {
